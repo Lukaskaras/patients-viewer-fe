@@ -1,6 +1,6 @@
 import { HeartIcon } from "@heroicons/react/24/solid";
-import { Container } from "./container";
 import { Card } from "./card";
+import { CardInner } from "./card-inner";
 import { RecentVitals } from "@/__generated__/graphql";
 
 type Props = {
@@ -11,8 +11,8 @@ export const RecentVitalsCard = ({ recentVitals }: Props) => {
   const { bloodPressure, heartRate, temperature } = recentVitals;
 
   return (
-    <Container>
-      <Card
+    <Card>
+      <CardInner
         icon={<HeartIcon className="w-8 h-8 text-teal-400" />}
         heading="Recent vitals"
         rows={[
@@ -21,6 +21,6 @@ export const RecentVitalsCard = ({ recentVitals }: Props) => {
           { title: "Temperature", text: temperature.toString() },
         ]}
       />
-    </Container>
+    </Card>
   );
 };

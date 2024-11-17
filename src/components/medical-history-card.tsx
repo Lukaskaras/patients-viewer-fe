@@ -1,6 +1,6 @@
 import { ClipboardDocumentListIcon } from "@heroicons/react/24/solid";
-import { Container } from "./container";
 import { Card } from "./card";
+import { CardInner } from "./card-inner";
 import { MedicalHistory } from "@/__generated__/graphql";
 
 type Props = {
@@ -11,8 +11,8 @@ export const MedicalHistoryCard = ({ medicalHistory }: Props) => {
   const { allergies, chronicConditions, currentMedications } = medicalHistory;
 
   return (
-    <Container>
-      <Card
+    <Card>
+      <CardInner
         icon={<ClipboardDocumentListIcon className="w-8 h-8 text-teal-400" />}
         heading="Medical history"
         rows={[
@@ -21,6 +21,6 @@ export const MedicalHistoryCard = ({ medicalHistory }: Props) => {
           { title: "Current medications", text: currentMedications.join(", ") },
         ]}
       />
-    </Container>
+    </Card>
   );
 };
