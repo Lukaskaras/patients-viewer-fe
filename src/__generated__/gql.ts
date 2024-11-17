@@ -14,7 +14,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Learn more about it here: https://the-guild.dev/graphql/codegen/plugins/presets/preset-client#reducing-bundle-size
  */
 const documents = {
-    "\n  query getPatient {\n    patient {\n      basicInfo {\n        name\n        age\n        gender\n        bloodType\n      }\n    }\n  }\n": types.GetPatientDocument,
+    "\n  query getPatient {\n    patient {\n      basicInfo {\n        name\n        age\n        gender\n        bloodType\n      }\n      medicalHistory {\n        allergies\n        chronicConditions\n        currentMedications\n      }\n      recentVitals {\n        bloodPressure\n        heartRate\n        temperature\n      }\n    }\n  }\n": types.GetPatientDocument,
 };
 
 /**
@@ -34,7 +34,7 @@ export function gql(source: string): unknown;
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function gql(source: "\n  query getPatient {\n    patient {\n      basicInfo {\n        name\n        age\n        gender\n        bloodType\n      }\n    }\n  }\n"): (typeof documents)["\n  query getPatient {\n    patient {\n      basicInfo {\n        name\n        age\n        gender\n        bloodType\n      }\n    }\n  }\n"];
+export function gql(source: "\n  query getPatient {\n    patient {\n      basicInfo {\n        name\n        age\n        gender\n        bloodType\n      }\n      medicalHistory {\n        allergies\n        chronicConditions\n        currentMedications\n      }\n      recentVitals {\n        bloodPressure\n        heartRate\n        temperature\n      }\n    }\n  }\n"): (typeof documents)["\n  query getPatient {\n    patient {\n      basicInfo {\n        name\n        age\n        gender\n        bloodType\n      }\n      medicalHistory {\n        allergies\n        chronicConditions\n        currentMedications\n      }\n      recentVitals {\n        bloodPressure\n        heartRate\n        temperature\n      }\n    }\n  }\n"];
 
 export function gql(source: string) {
   return (documents as any)[source] ?? {};

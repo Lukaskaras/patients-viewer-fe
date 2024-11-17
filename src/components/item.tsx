@@ -1,5 +1,3 @@
-import { BeakerIcon } from "@heroicons/react/24/solid";
-
 type Props = {
   title: string;
   text: string;
