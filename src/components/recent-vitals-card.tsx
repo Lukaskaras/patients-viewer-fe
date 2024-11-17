@@ -1,4 +1,4 @@
-import { UserCircleIcon } from "@heroicons/react/24/solid";
+import { HeartIcon } from "@heroicons/react/24/solid";
 import { Container } from "./container";
 import { Card } from "./card";
 import { RecentVitals } from "@/__generated__/graphql";
@@ -13,7 +13,7 @@ export const RecentVitalsCard = ({ recentVitals }: Props) => {
   return (
     <Container>
       <Card
-        icon={<UserCircleIcon className="w-8 h-8 text-gray-500" />}
+        icon={<HeartIcon className="w-8 h-8 text-teal-400" />}
         heading="Recent vitals"
         rows={[
           { title: "Blood pressure", text: bloodPressure },

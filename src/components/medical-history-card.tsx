@@ -13,7 +13,7 @@ export const MedicalHistoryCard = ({ medicalHistory }: Props) => {
   return (
     <Container>
       <Card
-        icon={<ClipboardDocumentListIcon className="w-8 h-8 text-gray-500" />}
+        icon={<ClipboardDocumentListIcon className="w-8 h-8 text-teal-400" />}
         heading="Medical history"
         rows={[
           { title: "Allergies", text: allergies.join(", ") },

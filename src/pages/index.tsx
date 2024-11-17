@@ -37,17 +37,19 @@ export default function Home() {
   if (error || !data?.patient) return <p>Something went wrong</p>;
 
   return (
-    <div className="grid grid-cols-[minmax(0,_400px)_1fr] gap-4 p-4">
-      <div className="flex flex-col gap-4">
-        <BasicInfoCard basicInfo={data.patient.basicInfo} />
-        <MedicalHistoryCard medicalHistory={data.patient.medicalHistory} />
-        <RecentVitalsCard recentVitals={data.patient.recentVitals} />
-      </div>
-      <Container>
-        <div className="flex justify-center min-h-96 min-w-96">
-          <Image src="/brain.png" alt="brain" width={600} height={600} />
+    <div className="max-w-screen-2xl mx-auto p-4">
+      <div className="grid grid-cols-1 md:grid-cols-[minmax(0,_400px)_1fr] gap-4">
+        <div className="flex flex-col gap-4">
+          <BasicInfoCard basicInfo={data.patient.basicInfo} />
+          <MedicalHistoryCard medicalHistory={data.patient.medicalHistory} />
+          <RecentVitalsCard recentVitals={data.patient.recentVitals} />
         </div>
-      </Container>
+        <Container>
+          <div className="flex justify-center min-h-96 min-w-96">
+            <Image src="/brain.png" alt="brain" width={600} height={600} />
+          </div>
+        </Container>
+      </div>
     </div>
   );
 }

@@ -5,8 +5,8 @@ type Props = {
 
 export const Item = ({ title, text }: Props) => {
   return (
-    <span>
-      <strong>{title}:</strong> {text}
+    <span className="text-secondary">
+      <strong>{title}:</strong> <span>{text}</span>
     </span>
   );
 };

@@ -13,7 +13,7 @@ export const BasicInfoCard = ({ basicInfo }: Props) => {
   return (
     <Container>
       <Card
-        icon={<UserCircleIcon className="w-8 h-8 text-gray-500" />}
+        icon={<UserCircleIcon className="w-8 h-8 text-teal-400" />}
         heading="Patient information"
         rows={[
           { title: "Name", text: name },
