@@ -6,6 +6,7 @@ import { BasicInfoCard } from "@/components/basic-info-card";
 import { MedicalHistoryCard } from "@/components/medical-history-card";
 import { RecentVitalsCard } from "@/components/recent-vitals-card";
 import { useRouter } from "next/router";
+import { BackToHomeLink } from "@/components/back-to-home-link";
 
 const PATIENT_QUERY = gql(`
   query getPatient($id: ID!) {
@@ -42,7 +43,8 @@ export default function UserDetail() {
 
   return (
     <div className="max-w-screen-2xl mx-auto p-4">
-      <div className="grid grid-cols-1 md:grid-cols-[minmax(0,_400px)_1fr] gap-4">
+      <BackToHomeLink />
+      <div className="grid grid-cols-1 md:grid-cols-[minmax(0,_400px)_1fr] gap-4 py-4">
         <div className="flex flex-col gap-4">
           <BasicInfoCard basicInfo={data.patient.basicInfo} />
           <MedicalHistoryCard medicalHistory={data.patient.medicalHistory} />
