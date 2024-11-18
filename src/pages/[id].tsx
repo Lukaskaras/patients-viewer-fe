@@ -31,7 +31,7 @@ const PATIENT_QUERY = gql(`
   }
 `);
 
-export default function UserDetail() {
+export default function PatientDetail() {
   const { query } = useRouter();
   const { loading, error, data } = useQuery(PATIENT_QUERY, {
     variables: { id: query.id as string },

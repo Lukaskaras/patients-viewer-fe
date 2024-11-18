@@ -20,11 +20,11 @@ export default function App({ Component, pageProps }: AppProps) {
           <Link href={"/"}>
             <div className="flex items-center gap-2">
               <span className="text-2xl">🏥</span>
-              <h1
+              <span
                 className={`text-2xl font-bold text-white ${montserrat.className}`}
               >
                 Frontend task
-              </h1>
+              </span>
             </div>
           </Link>
         </header>
