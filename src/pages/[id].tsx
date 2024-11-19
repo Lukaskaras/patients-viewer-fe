@@ -1,12 +1,12 @@
 import Image from "next/image";
-import { Card } from "@/components/card";
+import { Card } from "@/components/patient-detail/card";
 import { useQuery } from "@apollo/client";
 import { gql } from "@/__generated__/gql";
-import { BasicInfoCard } from "@/components/basic-info-card";
-import { MedicalHistoryCard } from "@/components/medical-history-card";
-import { RecentVitalsCard } from "@/components/recent-vitals-card";
+import { BasicInfoCard } from "@/components/patient-detail/basic-info-card";
+import { MedicalHistoryCard } from "@/components/patient-detail/medical-history-card";
+import { RecentVitalsCard } from "@/components/patient-detail/recent-vitals-card";
 import { useRouter } from "next/router";
-import { BackToHomeLink } from "@/components/back-to-home-link";
+import { BackToHomeLink } from "@/components/patient-detail/back-to-home-link";
 
 const PATIENT_QUERY = gql(`
   query getPatient($id: ID!) {
@@ -39,7 +39,9 @@ export default function PatientDetail() {
 
   if (loading) return <p>Loading...</p>;
 
-  if (error || !data?.patient) return <p>Something went wrong</p>;
+  if (error) return <p>Something went wrong</p>;
+
+  if (!data?.patient) return <p>No data</p>;
 
   return (
     <div className="max-w-screen-2xl mx-auto p-4">

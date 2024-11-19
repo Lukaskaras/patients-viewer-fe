@@ -20,14 +20,16 @@ export default function Home() {
 
   if (loading) return <p>Loading...</p>;
 
-  if (error || !data?.allPatients) return <p>Something went wrong</p>;
+  if (error) return <p>Something went wrong</p>;
+
+  if (!data) return <p>No data</p>;
 
   return (
     <div className="max-w-screen-2xl mx-auto p-4">
-      <h2 className="text-2xl font-bold py-8 text-center">List of patients</h2>
+      <h1 className="text-2xl font-bold py-8 text-center">List of patients</h1>
       <div className="flex flex-col gap-4">
         {data.allPatients.map((patient) => (
-          <Link href={`/${patient.id}`} className="text-xl">
+          <Link key={patient.id} href={`/${patient.id}`} className="text-xl">
             <div className="p-4 bg-white rounded-lg drop-shadow-md max-h-max hover:drop-shadow-lg ">
               {patient?.basicInfo.name}
             </div>

@@ -41,7 +41,7 @@ export type Patient = {
 
 export type Query = {
   __typename?: 'Query';
-  allPatients?: Maybe<Array<Patient>>;
+  allPatients: Array<Patient>;
   patient?: Maybe<Patient>;
 };
 
@@ -67,7 +67,7 @@ export type GetPatientQuery = { __typename?: 'Query', patient?: { __typename?: '
 export type GetAllPatientsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetAllPatientsQuery = { __typename?: 'Query', allPatients?: Array<{ __typename?: 'Patient', id: string, basicInfo: { __typename?: 'BasicInfo', name: string, age: number, gender: string } }> | null };
+export type GetAllPatientsQuery = { __typename?: 'Query', allPatients: Array<{ __typename?: 'Patient', id: string, basicInfo: { __typename?: 'BasicInfo', name: string, age: number, gender: string } }> };
 
 
 export const GetPatientDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"getPatient"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"id"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"ID"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"patient"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"id"},"value":{"kind":"Variable","name":{"kind":"Name","value":"id"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"basicInfo"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"age"}},{"kind":"Field","name":{"kind":"Name","value":"gender"}},{"kind":"Field","name":{"kind":"Name","value":"bloodType"}}]}},{"kind":"Field","name":{"kind":"Name","value":"medicalHistory"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"allergies"}},{"kind":"Field","name":{"kind":"Name","value":"chronicConditions"}},{"kind":"Field","name":{"kind":"Name","value":"currentMedications"}}]}},{"kind":"Field","name":{"kind":"Name","value":"recentVitals"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"bloodPressure"}},{"kind":"Field","name":{"kind":"Name","value":"heartRate"}},{"kind":"Field","name":{"kind":"Name","value":"temperature"}}]}}]}}]}}]} as unknown as DocumentNode<GetPatientQuery, GetPatientQueryVariables>;
