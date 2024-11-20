@@ -1,6 +1,6 @@
 Getting started:
 
-1. Make sure you have backend running, see https://github.com/Lukaskaras/neurona-lab-task-be
+1. Make sure you have backend running, see https://github.com/Lukaskaras/patients-viewer-be
 
 2. Run `npm install`
 
